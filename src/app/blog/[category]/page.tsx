@@ -9,7 +9,7 @@ export default function Page({ params }: {params: { category: string } }) {
   
   let posts = getBlogPosts().filter((post) => post.metadata.category === params.category);
 
-  if (!posts) {
+  if (!posts.length) {
     notFound();
   }
 
@@ -17,7 +17,7 @@ export default function Page({ params }: {params: { category: string } }) {
     <>
       <Header>
         <Container>
-          <h1 className="title font-semibold text-2xl tracking-wider mt-4 uppercase">{params.category}</h1>
+          <h1 className="title font-semibold text-2xl tracking-wider mt-4 uppercase">{posts[0]?.metadata.category}</h1>
         </Container>
       </Header>
       <Container>
