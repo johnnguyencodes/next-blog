@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { formatDate, getBlogPosts } from "../../utils";
 import { notFound } from "next/navigation";
 import CustomMDX from "@/components/ui/mdx";
+import ReportViews from "@/components/ReportViews";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -22,6 +23,7 @@ export default function Page({ params }:{ params: {category: string, slug: strin
 
   return (
     <>
+      <ReportViews category={post.metadata.category} title={post.metadata.title} slug={post.slug}/>
       <Header>
         <Container>
           <BreadcrumbWithCustomSeparator category={post.metadata.category} slug={post.slug} />
