@@ -6,6 +6,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   const { slug, title, category } = await request.json();
+  console.log("Received request:", { slug, title, category });
 
   try {
     const existingPost = await db.blog.findUnique({
@@ -13,6 +14,8 @@ export async function POST(request: Request) {
     }) 
 
     if (existingPost) {
+      console.log("Post exists, updating view count");
+
       await db.blog.update({
         where: { slug: slug },
         data: {
@@ -20,6 +23,7 @@ export async function POST(request: Request) {
         },
       });
     } else {
+      console.log("Received request:", { slug, title, category });
       await db.blog.create({
         data: {
           slug: slug,
