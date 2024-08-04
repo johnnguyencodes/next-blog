@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
+import { POSTS } from "@/lib/constants"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
@@ -13,57 +14,21 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Icons } from "../icons"
-import { ModeToggle } from "./mode-toggle"
+} from "@/components/ui/navigation-menu";
+import { Icons } from "./icons";
+import { ModeToggle } from "./ui/mode-toggle";
 
-const posts: { title: string; href: string; description: string }[] = [
-  {
-    title: "React",
-    href: "/blog/react",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-  {
-    title: "JavaScript",
-    href: "/blog/javascript",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-  {
-    title: "CSS",
-    href: "/blog/css",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-  {
-    title: "Performance",
-    href: "/blog/performance",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-  {
-    title: "Animation",
-    href: "/blog/animation",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-  {
-    title: "Career",
-    href: "/blog/career",
-    description:
-      "Learn React.js and Next.js in a simple to understand article.",
-  },
-]
-
-export function MainNav({className}: {className?: string}) {
+export function MainNav({ className }: { className?: string }) {
   return (
-    <div className={cn("flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50",
-    className
-    )}>
+    <div
+      className={cn(
+        "flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50",
+        className,
+      )}
+    >
       <Link href={"/"}>
         <div className="flex items-center justify-between w-32">
-          <Icons.logo className="h-6 w-6"/>
+          <Icons.logo className="h-6 w-6" />
           <p>John Nguyen</p>
         </div>
       </Link>
@@ -73,7 +38,7 @@ export function MainNav({className}: {className?: string}) {
             <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {posts.map((post) => (
+                {POSTS.map((post) => (
                   <ListItem
                     key={post.title}
                     title={post.title}
@@ -101,7 +66,7 @@ export function MainNav({className}: {className?: string}) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -115,7 +80,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >
@@ -126,7 +91,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
-
+  );
+});
+ListItem.displayName = "ListItem";
