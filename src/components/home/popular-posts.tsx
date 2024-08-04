@@ -14,7 +14,7 @@ export default function PopularPosts() {
 
   return (
     <ul className="overflow-auto">
-      {data?.map((post: { category: string; slug: string; title: string }) => (
+      {data?.map((post: { category: string, slug: string, title: string }) => (
         <Link href={`/blog/${post.category}/${post.slug}`} key={post.title}>
           <li className="flex items-center gap-2 group cursor-pointer py-2">
             <Icons.arrowRight className="h-6 w-6 group-hover:translate-x-1 transition-all" />
