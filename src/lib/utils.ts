@@ -9,7 +9,7 @@ export const fetchUrl = process.env.NODE_ENV === "development" ? "http://localho
 
 type ResponseData = {
   category: string,
-  tite: string,
+  title: string,
   slug: string,
 }[];
 
