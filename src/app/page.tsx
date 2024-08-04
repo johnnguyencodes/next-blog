@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import LatestPosts from "@/components/home/latest-posts";
-import { MainNav } from "@/components/ui/main-nav";
+import { MainNav } from "@/components/main-nav";
 import TopCategories from "@/components/home/top-categories";
 import PopularPosts from "@/components/home/popular-posts";
 
