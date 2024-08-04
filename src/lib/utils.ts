@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const fetchUrl = process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "/api"
+export const fetchUrl = process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "https://next-blog-chi-nine-48.vercel.app/api"
