@@ -2,6 +2,12 @@ import Container from "@/components/Container";
 import { getTermsOfServices } from "../blog/utils";
 import { MainNav } from "@/components/main-nav";
 import CustomMDX from "@/components/ui/mdx";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Services",
+  description: "This page explains the terms of use of the site."
+}
 
 export default function Page() {
   let post = getTermsOfServices().find((post) => post.slug === "terms-of-services")

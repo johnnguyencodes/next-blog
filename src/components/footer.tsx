@@ -55,6 +55,9 @@ export default function Footer() {
               <li>
                 <Link href="/privacy-policy" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Privacy Policy</Link>
               </li>
+              <li>
+                <Link href="/sitemap.xml" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Sitemap</Link>
+              </li>
             </ul>
           </div>
           <div className="space-y-4">
