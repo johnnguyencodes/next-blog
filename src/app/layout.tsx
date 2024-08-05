@@ -8,10 +8,14 @@ import { SiteConfig } from "@/config/site";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: {
     default: SiteConfig.name,
     template: `%s | ${SiteConfig.name}`,
   },
+  verification: {
+    google: "ycOPI1uEuig1PZxDqcxOC8xzCtJCGWMqKsCLyck_lSc",
+  },  
   description: SiteConfig.description,
   keywords: [
     "Next.js",
