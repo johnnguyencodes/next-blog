@@ -19,7 +19,7 @@ type State = {
   message?: string | null;
 }
 
-export default async function createSubscriber(prevState: State, formData: FormData) {
+export default async function createSubscriber(formData: FormData): Promise<State> {
   const validatedField = CreateSubscriber.safeParse({
     email: formData.get("email"),
   });

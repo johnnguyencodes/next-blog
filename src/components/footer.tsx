@@ -68,14 +68,14 @@ export default function Footer() {
                 <Input type="email" name="email" id="email" placeholder="Enter your email" className="flex-1" defaultValue="" aria-describedby="email-error" />
                 <Button>Subscribe</Button>
               </div>
-                <div id="email-error" aria-label="polite" aria-atomic="true" className="px-1">
-                  {state?.errors?.email && state.errors.email.map((error: string) => (
-                    <p key={error} className="text-xs text-red-500">{error}</p>
-                  ))}
-                  {!state?.errors?.email && (
-                    <p className="text-xs text-green-500">{state?.message}</p>
-                  )}
-                </div>
+              <div id="email-error" aria-label="polite" aria-atomic="true" className="px-1">
+                {state?.errors?.email && state.errors.email.map((error: string) => (
+                  <p key={error} className="text-xs text-red-500">{error}</p>
+                ))}
+                {!state?.errors?.email && (
+                  <p className="text-xs text-green-500">{state?.message}</p>
+                )}
+              </div>
             </form>
           </div>
         </div>
