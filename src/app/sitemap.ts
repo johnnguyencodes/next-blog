@@ -1,7 +1,7 @@
 import { POSTS } from "@/lib/constants";
-import { getBlogPosts } from "./blog/utils"
+import { getBlogPosts } from "./blog/utils";
 
-export const baseUrl = "https://www.johnnguyen.io"
+export const baseUrl = "https://www.johnnguyen.io";
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
@@ -12,10 +12,7 @@ export default async function sitemap() {
   let routes = POSTS.map((route) => ({
     url: `${baseUrl}${route.href}`,
     lastModified: new Date().toISOString().split("T")[0],
-  }))
-  
-  return [...blogs, ...routes]
+  }));
+
+  return [...blogs, ...routes];
 }
-
-
-

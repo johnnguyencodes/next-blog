@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "ycOPI1uEuig1PZxDqcxOC8xzCtJCGWMqKsCLyck_lSc",
-  },  
+  },
   description: SiteConfig.description,
   keywords: [
     "Next.js",
@@ -64,10 +64,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <main className="flex-1">
-            {children}
-          </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

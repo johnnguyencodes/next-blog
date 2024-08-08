@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { POSTS } from "@/lib/constants"
+import { POSTS } from "@/lib/constants";
 
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"

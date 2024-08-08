@@ -19,7 +19,7 @@ export default function Home() {
           </div>
           <div className="mt-10 sticky z-10 top-0">
             <h2 className="font-bold mb-4">POPULAR POSTS</h2>
-              <PopularPosts />
+            <PopularPosts />
           </div>
         </div>
       </main>

@@ -5,13 +5,18 @@ export default function LatestPosts() {
   let latestPosts = getBlogPosts();
   return (
     <>
-      <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">Recently Published</h1>
-      { latestPosts.sort((a, b) => {
-        if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
-          return -1;
-        }
-        return 1;
-      })
+      <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
+        Recently Published
+      </h1>
+      {latestPosts
+        .sort((a, b) => {
+          if (
+            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
+          ) {
+            return -1;
+          }
+          return 1;
+        })
         .map((post) => (
           <article key={post.slug} className="text-wrap max-w-md my-10">
             <Link href={`/blog/${post.metadata.category}/${post.slug}`}>
@@ -20,9 +25,11 @@ export default function LatestPosts() {
               </h3>
             </Link>
             <p className="leading-8 my-5">{post.metadata.summary}</p>
-            <p className="text-sm text-mute-foreground">{formatDate(post.metadata.publishedAt)}</p>
+            <p className="text-sm text-mute-foreground">
+              {formatDate(post.metadata.publishedAt)}
+            </p>
           </article>
         ))}
     </>
-  )
+  );
 }

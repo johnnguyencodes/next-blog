@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Icons } from "./icons";
@@ -10,7 +10,7 @@ import { useFormState } from "react-dom";
 
 export default function Footer() {
   const initialState = { message: "", errors: {} };
-  const [ state, dispatch ] = useFormState(createSubscriber, initialState)
+  const [state, dispatch] = useFormState(createSubscriber, initialState);
 
   return (
     <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
@@ -18,16 +18,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Icons.logo className="h-6 w-6"/>
+              <Icons.logo className="h-6 w-6" />
               <span className="text-md font-semibold">John Nguyen</span>
             </div>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Stay Up to Date with the latest news and insights from our blog.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
+              Stay Up to Date with the latest news and insights from our blog.
+            </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com/in/johnnguyencodes" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Icons.linkedIn className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"/>
+              <a
+                href="https://linkedin.com/in/johnnguyencodes"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <Icons.linkedIn className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" />
               </a>
               <a href="https://github.com/johnnguyencodes">
-                <Icons.gitHub className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"/>
+                <Icons.gitHub className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300" />
               </a>
             </div>
           </div>
@@ -36,46 +43,88 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               {POSTS.map((post) => (
                 <li key={post.title}>
-                  <Link href={post.href} className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    {post.title} 
+                  <Link
+                    href={post.href}
+                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                  >
+                    {post.title}
                   </Link>
                 </li>
-              ))}              
+              ))}
             </ul>
           </div>
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Links</h3>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="mailto:jnguyen92780@gmail.com" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Contact</a>
+                <a
+                  href="mailto:jnguyen92780@gmail.com"
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                >
+                  Contact
+                </a>
               </li>
               <li>
-                <Link href="/terms-of-services" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Terms of Services</Link>
+                <Link
+                  href="/terms-of-services"
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                >
+                  Terms of Services
+                </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Privacy Policy</Link>
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                >
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link href="/sitemap.xml" className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Sitemap</Link>
+                <Link
+                  href="/sitemap.xml"
+                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                >
+                  Sitemap
+                </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Newsletter</h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Subscribe to our newsletter to stay up-to-date with the latest news and updates.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
+              Subscribe to our newsletter to stay up-to-date with the latest
+              news and updates.
+            </p>
             <form action={dispatch}>
               <div className="flex space-x-2">
-                <Input type="email" name="email" id="email" placeholder="Enter your email" className="flex-1" defaultValue="" aria-describedby="email-error" />
+                <Input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  className="flex-1"
+                  defaultValue=""
+                  aria-describedby="email-error"
+                />
                 <Button>Subscribe</Button>
               </div>
-                <div id="email-error" aria-label="polite" aria-atomic="true" className="px-1">
-                  {state?.errors?.email && state.errors.email.map((error: string) => (
-                    <p key={error} className="text-xs text-red-500">{error}</p>
+              <div
+                id="email-error"
+                aria-label="polite"
+                aria-atomic="true"
+                className="px-1"
+              >
+                {state?.errors?.email &&
+                  state.errors.email.map((error: string) => (
+                    <p key={error} className="text-xs text-red-500">
+                      {error}
+                    </p>
                   ))}
-                  {!state?.errors?.email && (
-                    <p className="text-xs text-green-500">{state?.message}</p>
-                  )}
-                </div>
+                {!state?.errors?.email && (
+                  <p className="text-xs text-green-500">{state?.message}</p>
+                )}
+              </div>
             </form>
           </div>
         </div>
@@ -84,5 +133,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
