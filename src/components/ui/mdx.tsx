@@ -1,3 +1,4 @@
+import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
