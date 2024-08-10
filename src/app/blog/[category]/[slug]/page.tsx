@@ -15,18 +15,27 @@ export async function generateStaticParams() {
   }));
 }
 
-
-export function generateMetadata({params}: { params: { slug: string; category: string };
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string; category: string };
 }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return;
   }
 
-  let { title, publishedAt: publishedTime, summary: description, image} = post.metadata;
+  let {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+  } = post.metadata;
 
-  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
-  
+  let ogImage = image
+    ? image
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
   return {
     title,
     description,
@@ -36,9 +45,7 @@ export function generateMetadata({params}: { params: { slug: string; category: s
       type: "article",
       publishedTime,
       url: `${baseUrl}/blog/${post?.metadata.category}/${post?.slug}`,
-      images: [
-        {url: ogImage}
-      ]
+      images: [{ url: ogImage }],
     },
     // twitter: {
     //   card: "summary_large_image",
@@ -46,13 +53,17 @@ export function generateMetadata({params}: { params: { slug: string; category: s
     //   description,
     //   images: [ogImage],
     // }
-  }
+  };
 }
 
-export default function Page({ params }:{ params: {category: string, slug: string}}) {
+export default function Page({
+  params,
+}: {
+  params: { category: string; slug: string };
+}) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
-  if(!post) {
+  if (!post) {
     notFound();
   }
 
@@ -80,13 +91,24 @@ export default function Page({ params }:{ params: {category: string, slug: strin
           }),
         }}
       />
-      <ReportViews category={post.metadata.category} title={post.metadata.title} slug={post.slug}/>
+      <ReportViews
+        category={post.metadata.category}
+        title={post.metadata.title}
+        slug={post.slug}
+      />
       <Header>
         <Container>
-          <BreadcrumbWithCustomSeparator category={post.metadata.category} slug={post.slug} />
-          <h1 className="title font-semibold text-2xl tracking-tighter mt-4">{post.metadata.title}</h1>
-          <div className="flex justify-between items-center mt-2 mb-4 text-sm">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">{formatDate(post.metadata.publishedAt)}</p>
+          <BreadcrumbWithCustomSeparator
+            category={post.metadata.category}
+            slug={post.slug}
+          />
+          <h1 className="title mt-4 text-2xl font-semibold tracking-tighter">
+            {post.metadata.title}
+          </h1>
+          <div className="mb-4 mt-2 flex items-center justify-between text-sm">
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+              {formatDate(post.metadata.publishedAt)}
+            </p>
           </div>
         </Container>
       </Header>
@@ -96,5 +118,5 @@ export default function Page({ params }:{ params: {category: string, slug: strin
         </article>
       </Container>
     </>
-  )
+  );
 }

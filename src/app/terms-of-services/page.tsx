@@ -6,18 +6,20 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Services",
-  description: "This page explains the terms of use of the site."
-}
+  description: "This page explains the terms of use of the site.",
+};
 
 export default function Page() {
-  let post = getTermsOfServices().find((post) => post.slug === "terms-of-services")
+  let post = getTermsOfServices().find(
+    (post) => post.slug === "terms-of-services",
+  );
 
   return (
     <Container>
       <MainNav />
-        <article className="prose">
-          <CustomMDX source={post?.content}/>
-        </article>
+      <article className="prose">
+        <CustomMDX source={post?.content} />
+      </article>
     </Container>
-  )
+  );
 }

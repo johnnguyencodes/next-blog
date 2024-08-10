@@ -15,17 +15,17 @@ function readMDXFile(filePath: string) {
 
 // present the mdx data and metadata
 function getMDXData(dir: string) {
-  let mdxFiles = getMDXFiles(dir)
-  
+  let mdxFiles = getMDXFiles(dir);
+
   return mdxFiles.map((file) => {
-    let {data: metadata, content } = readMDXFile(path.join(dir, file));
+    let { data: metadata, content } = readMDXFile(path.join(dir, file));
     let slug = path.basename(file, path.extname(file));
-    
+
     return {
       metadata,
       slug,
       content,
-    }
+    };
   });
 }
 
@@ -34,11 +34,13 @@ export function getBlogPosts() {
 }
 
 export function getTermsOfServices() {
-  return getMDXData(path.join(process.cwd(), "src", "app", "terms-of-services" ));
+  return getMDXData(
+    path.join(process.cwd(), "src", "app", "terms-of-services"),
+  );
 }
 
 export function getPrivacyPolicy() {
-  return getMDXData(path.join(process.cwd(), "src", "app", "privacy-policy" ));
+  return getMDXData(path.join(process.cwd(), "src", "app", "privacy-policy"));
 }
 
 export function formatDate(date: string, includeRelative = false) {
@@ -55,11 +57,11 @@ export function formatDate(date: string, includeRelative = false) {
 
   let formattedDate = "";
 
-  if(yearsAgo > 0) {
+  if (yearsAgo > 0) {
     formattedDate = `${yearsAgo}y ago`;
   } else if (monthsAgo > 0) {
     formattedDate = `${monthsAgo}mo ago`;
-  } else if(daysAgo > 0) {
+  } else if (daysAgo > 0) {
     formattedDate = `${daysAgo}d ago`;
   } else {
     formattedDate = "Today";
@@ -71,7 +73,7 @@ export function formatDate(date: string, includeRelative = false) {
     year: "numeric",
   });
 
-  if(!includeRelative) {
+  if (!includeRelative) {
     return fullDate;
   }
 

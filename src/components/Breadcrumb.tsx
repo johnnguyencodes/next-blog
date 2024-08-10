@@ -1,4 +1,4 @@
-import { Slash } from "lucide-react"
+import { Slash } from "lucide-react";
 
 import {
   Breadcrumb,
@@ -7,9 +7,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb";
 
-export function BreadcrumbWithCustomSeparator({ category, slug }:{ category: string, slug: string })  {
+export function BreadcrumbWithCustomSeparator({
+  category,
+  slug,
+}: {
+  category: string;
+  slug: string;
+}) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -30,5 +36,5 @@ export function BreadcrumbWithCustomSeparator({ category, slug }:{ category: str
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }

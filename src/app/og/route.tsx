@@ -71,7 +71,7 @@ export function GET(request: Request) {
       {
         width: 1200,
         height: 630,
-      }
+      },
     );
   } catch (error) {
     return new Response("Failed to create OG Image", { status: 500 });

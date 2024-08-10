@@ -1,7 +1,11 @@
 import Container from "@/components/Container";
 import { MainNav } from "@/components/main-nav";
 
-export default function BlogLayout({ children }:{children: React.ReactNode}) {
+export default function BlogLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <div className="bg-gray-100 dark:bg-gray-800">
@@ -9,7 +13,7 @@ export default function BlogLayout({ children }:{children: React.ReactNode}) {
           <MainNav />
         </Container>
       </div>
-      { children }
+      {children}
     </>
-  )
+  );
 }

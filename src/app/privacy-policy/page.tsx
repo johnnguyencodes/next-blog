@@ -6,18 +6,18 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "This page explains the Privacy Policy of the site."
-}
+  description: "This page explains the Privacy Policy of the site.",
+};
 
 export default function Page() {
-  let post = getPrivacyPolicy().find((post) => post.slug === "privacy-policy")
+  let post = getPrivacyPolicy().find((post) => post.slug === "privacy-policy");
 
   return (
     <Container>
       <MainNav />
-        <article className="prose">
-          <CustomMDX source={post?.content}/>
-        </article>
+      <article className="prose">
+        <CustomMDX source={post?.content} />
+      </article>
     </Container>
-  )
+  );
 }
