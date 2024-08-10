@@ -102,11 +102,11 @@ export default function Page({
             category={post.metadata.category}
             slug={post.slug}
           />
-          <h1 className="title font-semibold text-2xl tracking-tighter mt-4">
+          <h1 className="title mt-4 text-2xl font-semibold tracking-tighter">
             {post.metadata.title}
           </h1>
-          <div className="flex justify-between items-center mt-2 mb-4 text-sm">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+          <div className="mb-4 mt-2 flex items-center justify-between text-sm">
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
               {formatDate(post.metadata.publishedAt)}
             </p>
           </div>

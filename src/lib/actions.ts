@@ -21,7 +21,7 @@ type State = {
 
 export default async function createSubscriber(
   prevState: State,
-  formData: FormData,
+  formData: FormData
 ) {
   const validatedField = CreateSubscriber.safeParse({
     email: formData.get("email"),
