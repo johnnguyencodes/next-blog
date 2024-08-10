@@ -1,4 +1,3 @@
-import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +6,7 @@ import { highlight } from "sugar-high";
 function Blockquote(props: any) {
   return (
     <blockquote
-      className="bg-blue-200 dark:bg-blue-950 dark:bg-opacity-30 bg-opacity-30 p-4 rounded-md blockquote"
+      className="blockquote rounded-md bg-blue-200 bg-opacity-30 p-4 dark:bg-blue-950 dark:bg-opacity-30"
       {...props}
     />
   );
@@ -24,13 +23,13 @@ function CustomLink(props: any) {
   if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
-        {props.children}
+        {props.children || "Default Link Text"}
       </Link>
     );
   }
 
   if (href.startsWith("#")) {
-    return <a {...props} />;
+    return <a {...props}>{props.children || "Default Link Text"}</a>;
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
@@ -47,7 +46,7 @@ function slugify(str: string) {
     .trim()
     .replace(/\s+/g, "-") // Replace spaces with dashes
     .replace(/&/g, "-and-") // Replace `&` with `and`
-    .replace(/\-\-+/g, "-"); // Replace multiple dashes with single dash
+    .replace(/-+/g, "-"); // Replace multiple dashes with single dash
 }
 
 function createHeading(level: number) {
@@ -64,7 +63,7 @@ function createHeading(level: number) {
           className: "anchor",
         }),
       ],
-      children,
+      children
     );
   };
 

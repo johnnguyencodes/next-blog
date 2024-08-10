@@ -1,7 +1,6 @@
-import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { getBlogPosts } from "@/app/blog/utils";
 import Link from "next/link";
 import CardCategory from "../CardCategory";
-import Container from "../Container";
 
 export default function LatestPosts() {
   let latestPosts = getBlogPosts();

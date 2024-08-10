@@ -1,4 +1,4 @@
-type SiteConfig = {
+type SiteConfigType = {
   name: string;
   description: string;
   url: string;
@@ -9,7 +9,7 @@ type SiteConfig = {
   };
 };
 
-export const SiteConfig: SiteConfig = {
+export const SiteConfig: SiteConfigType = {
   name: "John Nguyen's Website",
   description:
     "My website built with Next.js 14, Shadcn UI, Prisma, and markdown support.",
