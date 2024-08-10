@@ -32,7 +32,12 @@ function CustomLink(props: any) {
     return <a {...props}>{props.children || "Default Link Text"}</a>;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a target="_blank" rel="noopener noreferrer" {...props}>
+      {" "}
+      {props.children || "Defalt Link Text"}
+    </a>
+  );
 }
 
 function RoundedImage(props: any) {
