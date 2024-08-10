@@ -10,7 +10,8 @@
   ],
   "rules": {
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "on"
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "plugins": ["react", "import", "jsx-a11y"],
   "parserOptions": {
