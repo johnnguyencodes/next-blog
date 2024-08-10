@@ -2,10 +2,10 @@ import {
   Rss,
   Command,
   ArrowRight,
-  LinkedinIcon,
   type Icon as LucideIcon,
-  LucideProps,
 } from "lucide-react";
+
+export type LucideProps = React.SVGProps<SVGSVGElement>;
 
 export type Icon = typeof LucideIcon;
 
