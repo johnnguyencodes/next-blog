@@ -22,7 +22,18 @@ export function generateMetadata({
 }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    return {
+      title: "Post not found",
+      description: "The post you are looking for does not exist.",
+      openGraph: {
+        title: "Post not found",
+        description: "The post you are looking for does not exist.",
+        type: "article",
+        publishedTime: "",
+        url: `${baseUrl}/blog/${params.category}/${params.slug}`,
+        images: [{ url: "" }],
+      },
+    };
   }
 
   let {
