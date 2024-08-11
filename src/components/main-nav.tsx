@@ -15,7 +15,7 @@ import { ModeToggle } from "./ui/mode-toggle";
 
 export function MainNav({ className }: { className?: string }) {
   return (
-    <div className="sticky top-0 mx-auto w-full border-b border-lightmode-black bg-lightmode-white px-2.5 dark:border-darkmode-white dark:bg-darkmode-black md:px-20">
+    <div className="sticky top-0 z-50 mx-auto w-full border-b border-lightmode-black bg-lightmode-white px-2.5 dark:border-darkmode-white dark:bg-darkmode-black md:px-20">
       <div
         className={cn(
           "z-50 mx-auto flex max-w-screen-xl flex-col items-start justify-start py-6 md:flex-row md:items-center md:justify-between md:px-20",
@@ -31,10 +31,8 @@ export function MainNav({ className }: { className?: string }) {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Blog
-                </NavigationMenuLink>
+              <Link href="/blog" legacyBehavior passHref>
+                <NavigationMenuLink>Blog</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
