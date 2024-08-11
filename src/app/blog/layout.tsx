@@ -8,7 +8,8 @@ export default function BlogLayout({
   return (
     <>
       <div className="sticky top-0 bg-gray-100 dark:bg-gray-800">
-        <Container>{children}</Container>
+        {/* @ts-ignore */}
+        <Container></Container>
       </div>
       {children}
     </>
