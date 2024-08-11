@@ -17,7 +17,7 @@ export default function CardCategory({
   date: string;
 }) {
   return (
-    <Card className="w-[350px] h-[290px] shadow-lg">
+    <Card className="h-[290px] w-[350px] shadow-lg">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
@@ -25,7 +25,9 @@ export default function CardCategory({
         <p>{summary}</p>
       </CardContent>
       <CardFooter>
-        <p className="text-xs text-gray-500">{formatDate(date)}</p>
+        <p className="text-xs text-lightmode-red dark:text-darkmode-red">
+          {formatDate(date)}
+        </p>
       </CardFooter>
     </Card>
   );

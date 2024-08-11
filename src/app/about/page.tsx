@@ -11,24 +11,14 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
   return (
     <>
-      <div className="bg-gray-100 dark:bg-gray-800">
-        <Container>
-          <MainNav />
-          <Header>
-            <h1 className="title font-semibold text-2xl tracking-tighter mt-4 capitalize">
-              About Me
-            </h1>
-          </Header>
-        </Container>
-      </div>
-      <div className="container max-w-6xl py-6 lg:py-10">
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-          <div className="min-w-48 max-w-48 flex flex-col gap-2">
-            <p className="text-muted-foreground text-center break-words">
+      <div className="container mx-auto w-full max-w-screen-xl px-2.5 py-6 md:px-20 lg:py-10">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+          <div className="flex min-w-48 max-w-48 flex-col gap-2">
+            <p className="break-words text-muted-foreground">
               Software Developer
             </p>
           </div>
-          <p className="text-muted-foreground text-lg py-4">
+          <p className="py-4 text-lg text-muted-foreground">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

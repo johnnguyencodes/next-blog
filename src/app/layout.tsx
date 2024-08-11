@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { SiteConfig } from "@/config/site";
+import { MainNav } from "@/components/main-nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,13 +64,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} debug-screens h-full bg-lightmode-white text-lightmode-black selection:bg-lightmode-highlight selection:text-lightmode-black dark:bg-darkmode-black dark:text-darkmode-white dark:selection:bg-darkmode-highlight dark:selection:text-lightmode-black`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <MainNav />
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>

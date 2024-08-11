@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import { MainNav } from "@/components/main-nav";
 
 export default function BlogLayout({
   children,
@@ -8,10 +7,8 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <div className="bg-gray-100 dark:bg-gray-800">
-        <Container>
-          <MainNav />
-        </Container>
+      <div className="sticky top-0 bg-gray-100 dark:bg-gray-800">
+        <Container></Container>
       </div>
       {children}
     </>
