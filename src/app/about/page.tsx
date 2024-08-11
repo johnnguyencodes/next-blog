@@ -1,6 +1,3 @@
-import Container from "@/components/Container";
-import Header from "@/components/Header";
-import { MainNav } from "@/components/main-nav";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
