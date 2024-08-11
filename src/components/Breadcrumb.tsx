@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/breadcrumb";
 
 export function BreadcrumbWithCustomSeparator({
-  category,
   slug,
 }: {
   category: string;
