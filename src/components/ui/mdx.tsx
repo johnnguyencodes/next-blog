@@ -7,7 +7,7 @@ import { highlight } from "sugar-high";
 function Blockquote(props: any) {
   return (
     <blockquote
-      className="blockquote rounded-md bg-blue-200 bg-opacity-30 p-4 dark:bg-blue-950 dark:bg-opacity-30"
+      className="blockquote group rounded-md bg-lightmode-black-50 bg-opacity-20 p-4 dark:bg-darkmode-black-50 dark:bg-opacity-10"
       {...props}
     />
   );
@@ -61,7 +61,10 @@ function createHeading(level: number) {
 
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      {
+        id: slug,
+        className: "group-[.group]:mt-0",
+      },
       [
         React.createElement("a", {
           href: `#${slug}`,
