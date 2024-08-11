@@ -22,10 +22,7 @@ export default function LatestPosts() {
             return 1;
           })
           .map((post) => (
-            <Link
-              href={`/blog/${post.metadata.category}/${post.slug}`}
-              key={post.slug}
-            >
+            <Link href={`/blog/${post.slug}`} key={post.slug}>
               <CardCategory
                 title={post.metadata.title}
                 summary={post.metadata.summary}

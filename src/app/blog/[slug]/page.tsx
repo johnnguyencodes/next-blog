@@ -1,7 +1,7 @@
 import { BreadcrumbWithCustomSeparator } from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
-import { formatDate, getBlogPosts } from "../../utils";
+import { formatDate, getBlogPosts } from "../utils";
 import { notFound } from "next/navigation";
 import CustomMDX from "@/components/ui/mdx";
 import ReportViews from "@/components/ReportViews";
@@ -15,11 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string; category: string };
-}) {
+export function generateMetadata({ params }: { params: { slug: string } }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return {
@@ -30,7 +26,7 @@ export function generateMetadata({
         description: "The post you are looking for does not exist.",
         type: "article",
         publishedTime: "",
-        url: `${baseUrl}/blog/${params.category}/${params.slug}`,
+        url: `${baseUrl}/blog/${params.slug}`,
         images: [{ url: "" }],
       },
     };
@@ -55,7 +51,7 @@ export function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `${baseUrl}/blog/${post?.metadata.category}/${post?.slug}`,
+      url: `${baseUrl}/blog/${post?.slug}`,
       images: [{ url: ogImage }],
     },
     // twitter: {
@@ -67,11 +63,7 @@ export function generateMetadata({
   };
 }
 
-export default function Page({
-  params,
-}: {
-  params: { category: string; slug: string };
-}) {
+export default function Page({ params }: { params: { slug: string } }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -94,7 +86,7 @@ export default function Page({
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.metadata.category}/${post.slug}`,
+            url: `${baseUrl}/blog/${post.slug}`,
             author: {
               "@type": "Person",
               name: "John Nguyen's Website",
@@ -109,10 +101,7 @@ export default function Page({
       />
       <Header>
         <Container>
-          <BreadcrumbWithCustomSeparator
-            category={post.metadata.category}
-            slug={post.slug}
-          />
+          <BreadcrumbWithCustomSeparator slug={post.slug} category="blog" />
           <h1 className="title mt-4 text-2xl font-semibold tracking-tighter">
             {post.metadata.title}
           </h1>
