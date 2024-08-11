@@ -20,50 +20,43 @@ import { ModeToggle } from "./ui/mode-toggle";
 
 export function MainNav({ className }: { className?: string }) {
   return (
-    <div
-      className={cn(
-        "flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50",
-        className,
-      )}
-    >
-      <Link href={"/"}>
-        <div className="flex items-center justify-between w-32">
-          <Icons.logo className="h-6 w-6" />
-          <p>John Nguyen</p>
-        </div>
-      </Link>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {POSTS.map((post) => (
-                  <ListItem
-                    key={post.title}
-                    title={post.title}
-                    href={post.href}
-                  >
-                    {post.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div className="flex items-center justify-between w-20">
-        <ModeToggle />
-        <Link href="/rss">
-          <Icons.rss className="h-6 w-6" />
+    <div className="sticky top-0 mx-auto w-full border-b border-lightmode-black bg-lightmode-white px-2.5 dark:border-darkmode-white dark:bg-darkmode-black md:px-20">
+      <div
+        className={cn(
+          "z-50 mx-auto flex max-w-screen-xl flex-col items-start justify-start py-6 md:flex-row md:items-center md:justify-between md:px-20",
+          className
+        )}
+      >
+        <Link href={"/"}>
+          <div className="flex w-32 items-center justify-between text-lightmode-red hover:text-lightmode-red-700 dark:text-darkmode-red dark:hover:text-darkmode-red-300">
+            <Icons.logo className="h-6 w-6" />
+            <p className="font-semibold">John Nguyen</p>
+          </div>
         </Link>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Blog
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div className="flex w-20 items-center justify-between">
+          <ModeToggle />
+          <Link href="/rss">
+            <Icons.rss className="h-6 w-6" />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -80,7 +73,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
+            className
           )}
           {...props}
         >
