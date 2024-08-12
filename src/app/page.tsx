@@ -6,18 +6,18 @@ const posts = [
   {
     id: 1,
     title: "Boost your conversion rate",
-    href: "#",
+    href: "/nowhere",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.",
     imageUrl:
       "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Marketing", href: "/nowhere" },
     author: {
       name: "Michael Foster",
       role: "Co-Founder / CTO",
-      href: "#",
+      href: "/nowhere",
       imageUrl:
         "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
@@ -25,18 +25,18 @@ const posts = [
   {
     id: 2,
     title: "Boost your conversion rate",
-    href: "#",
+    href: "/nowhere",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.",
     imageUrl:
       "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Marketing", href: "/nowhere" },
     author: {
       name: "Michael Foster",
       role: "Co-Founder / CTO",
-      href: "#",
+      href: "/nowhere",
       imageUrl:
         "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
@@ -44,18 +44,18 @@ const posts = [
   {
     id: 3,
     title: "Boost your conversion rate",
-    href: "#",
+    href: "/nowhere",
     description:
       "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.",
     imageUrl:
       "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+    category: { title: "Marketing", href: "/nowhere" },
     author: {
       name: "Michael Foster",
       role: "Co-Founder / CTO",
-      href: "#",
+      href: "/nowhere",
       imageUrl:
         "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
@@ -89,6 +89,7 @@ export default function Home() {
       <main className="mt-16 flex flex-col items-start justify-evenly">
         <div>
           <main>
+            {/* Hero */}
             <div className="relative isolate">
               <svg
                 aria-hidden="true"
@@ -149,13 +150,13 @@ export default function Home() {
                       </p>
                       <div className="mt-10 flex items-center gap-x-6">
                         <a
-                          href="#"
+                          href="/nowhere"
                           className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
                           Get started
                         </a>
                         <a
-                          href="#"
+                          href="/nowhere"
                           className="text-sm font-semibold leading-6 text-gray-900"
                         >
                           Live demo <span aria-hidden="true">→</span>
@@ -215,6 +216,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Summary of skills */}
             <div className="overflow-hidden bg-white py-24 sm:py-32">
               <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
@@ -266,7 +268,7 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="px-6 pb-14 pt-6">
-                            console.log("Hello world!")
+                            console.log(&qout;Hello world!&quot;)
                           </div>
                         </div>
                       </div>
@@ -279,6 +281,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Tools */}
             <div className="bg-white py-24 sm:py-32">
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-3">
@@ -340,6 +344,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Projects */}
             <div className="bg-white py-24 sm:py-32">
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-4xl">
@@ -416,6 +421,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Call to action */}
             <div className="bg-white">
               <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
                 <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
@@ -429,13 +436,13 @@ export default function Home() {
                   </p>
                   <div className="mt-10 flex items-center justify-center gap-x-6">
                     <a
-                      href="#"
+                      href="/nowhere"
                       className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >
                       Get started
                     </a>
                     <a
-                      href="#"
+                      href="/nowhere"
                       className="text-sm font-semibold leading-6 text-white"
                     >
                       Learn more <span aria-hidden="true">→</span>
