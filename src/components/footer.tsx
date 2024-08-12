@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="dark:lightmode-red flex items-center space-x-2 text-lightmode-red">
             <Icons.logo className="h-6 w-6" />
-            <span className="text-md font-semibold">John Nguyen</span>
           </div>
           <div className="flex space-x-4">
             <a
